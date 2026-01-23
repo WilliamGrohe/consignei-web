@@ -1,8 +1,7 @@
-export interface CreateBookProps {
-  title: string;
-  author: string;
-  isbn?: string;
-  cover_price: number;
+export type CreateBookProps ={
+  title: string,
+  isbn: string,
+  cover_price: number,
 }
 
 export interface Book extends CreateBookProps {

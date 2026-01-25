@@ -4,7 +4,10 @@ export type CreateBookProps ={
   cover_price: number,
 }
 
-export interface Book extends CreateBookProps {
+export interface Book {
   id: string;
   created_at: string;
+  title: string,
+  isbn: string,
+  cover_price: number,
 }

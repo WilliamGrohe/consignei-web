@@ -1,9 +1,11 @@
 export interface Partner {
-  id: string;
-  user_id: string;
-  created_at: string;
+  id?: string;
+  user_id?: string;
+  created_at?: string;
   name: string,
-  email: string,
+  email?: string,
   phone: string,
-  cover_price: number,
+  contact_name?: string,
+  notes?: string,
+  cnpj: string,
 }

@@ -27,8 +27,10 @@ const [partners, setPartners] = useState<Partner[]>([])
         <thead>
           <tr>
             <th align="left">Name</th>
-            <th align="left">Email</th>
+            <th align="left">Contato</th>
             <th align="left">Fone</th>
+            <th align="left">Email</th>
+            <th align="left">CNPJ</th>
           </tr>
         </thead>
 
@@ -36,8 +38,10 @@ const [partners, setPartners] = useState<Partner[]>([])
           {partners.map(partner => (
             <tr key={partner.id}>
               <td>{partner.name}</td>
-              <td>{partner.email}</td>
+              <td>{partner.contact_name}</td>
               <td>{partner.phone}</td>
+              <td>{partner.email}</td>
+              <td>{partner.cnpj}</td>
             </tr>
           ))}
         </tbody>

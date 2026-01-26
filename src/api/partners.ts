@@ -1,3 +1,4 @@
+import type { Partner } from '@/types/partner';
 import { api } from './api';
 
 export async function getPartners() {
@@ -5,7 +6,7 @@ export async function getPartners() {
   return response.data;
 }
 
-export async function createPartner(payload: { name: string; email: string; phone: string; }) {
+export async function createPartner(payload: Partner){
   const response = await api.post('/partners', payload);
   return response.data;
 }

@@ -13,9 +13,9 @@ import { createPartner } from "@/api/partners";
 const createPartnerSchema = z.object({
   name: z.string(),
   email: z.string(),
-  cnpj: z.coerce.number(),
+  cnpj: z.string(),
   phone: z.string(),
-  contact: z.string(),
+  contact_name: z.string(),
   notes: z.string().optional(),
 });
 
@@ -67,7 +67,7 @@ export function CreatePartner() {
             <Field>
               <FieldLabel htmlFor="fieldgroup-contact">Contato</FieldLabel>
               <Input
-                {...register("contact")}
+                {...register("contact_name")}
                 placeholder="Nome do responsável"
                 
               />

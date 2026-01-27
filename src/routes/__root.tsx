@@ -1,36 +1,39 @@
-import * as React from 'react'
-import { Link, Outlet, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import * as React from "react";
+import { Link, Outlet, createRootRoute } from "@tanstack/react-router";
+import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
 
 export const Route = createRootRoute({
   component: RootComponent,
-})
+});
 
-// function RootComponent() {
-//   return (
-//     <React.Fragment>
-//       <div>Hello "__root"!</div>
-//       <Outlet />
-//     </React.Fragment>
-//   )
-// }
 function RootComponent() {
   return (
-    <>
-      <div className="p-2 flex gap-2 text-lg">
-        <Link
-          to="/partners"
-          activeProps={{
-            className: 'font-bold',
-          }}
-          activeOptions={{ exact: true }}
-        >
-          Partners  
-        </Link>
-      </div>
+    <React.Fragment>
+      <NavigationMenu>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild>
+              <Link to="/partners">Livrarias</Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild>
+              <Link to="/books">Livros</Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
       <hr />
       <Outlet />
       <TanStackRouterDevtools position="bottom-right" />
-    </>
-  )
+    </React.Fragment>
+  );
 }

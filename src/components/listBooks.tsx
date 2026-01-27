@@ -22,7 +22,7 @@ export function ListBooks() {
 
   return(
     <div style={{ padding: 24 }}>
-      <h1 >Livros Cadastrados</h1>
+      <h1>Livros Cadastrados</h1>
 
       <table width="100%" cellPadding={8}>
         <thead>

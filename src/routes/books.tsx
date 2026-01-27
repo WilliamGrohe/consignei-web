@@ -1,5 +1,5 @@
 import { ListBooks } from '@/components/listBooks'
-import { CreateBook } from '@/pages/CreateBook'
+import { CreateBook } from '@/components/CreateBook'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/books')({

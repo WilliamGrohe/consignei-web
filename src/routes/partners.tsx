@@ -1,9 +1,15 @@
 import { getPartners } from "@/api/partners";
 import type { Partner } from "@/types/partner";
-import { useEffect, useState } from "react";
 
-export function Partners() {
-const [partners, setPartners] = useState<Partner[]>([])
+import { useEffect, useState } from "react";
+import { createFileRoute } from '@tanstack/react-router'
+
+export const Route = createFileRoute('/partners')({
+  component: PartnerComponent,
+})
+
+function PartnerComponent() {
+  const [partners, setPartners] = useState<Partner[]>([])
 
   useEffect(() => {
     console.log('Loading partners...');
@@ -48,5 +54,6 @@ const [partners, setPartners] = useState<Partner[]>([])
       </table>
     </div>
   )
-
 }
+
+
